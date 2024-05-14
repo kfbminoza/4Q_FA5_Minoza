@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="num"></p>
+    <script>
+
+    	do {
+            var x = prompt("Enter number: ");
+        } while (isNaN(x) || x === "");
+
+        document.getElementById("num").innerHTML = "Number inputted: " + x + "<br>";
+
+        function rectangle(num) {
+            for (let i=num; i>=1;i--) {
+                let y = "";
+                for (let j=0; j<num;j++) {
+                    y = y + i + " ";
+                }
+                document.write(y + "<br>");
+            }
+        }
+
+        function triangle(num) {
+            for (let i=num;i>=1;i--) {
+                let y = "";
+                for (let j=i;j>=1;j--) {
+                    y = y + j + " ";
+                }
+                document.write(y + "<br>");
+            }
+        }
+
+        if (x % 2 === 0) {
+            triangle(parseInt(x));
+        } else {
+            rectangle(parseInt(x));
+        }
+    </script>
+</body>
+</html>

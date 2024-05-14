@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>Contacts Ni Resma Daniel Alcantara and Leeuan Eliah Suelto From 9 - Sodium</h1>
+    <input type="text" id="contInp">
+    <button onclick="addCont()">Add</button>
+    <button onclick="removeCont()">Remove</button>
+    <br>
+    <p id="conts"></p>
+
+    <script>
+        let cont = [];
+
+        function contDisplay() {
+            document.getElementById("conts").innerHTML = cont.join(" ");
+        }
+
+        function addCont() {
+            let contInp = document.getElementById("contInp").value.trim();
+            if (contInp !== "") {
+                if (cont.length>=7) {
+                    cont.shift();
+                }
+                cont.push(contInp);
+                contDisplay();
+            }
+            document.getElementById("contInp").value = "";
+        }
+
+        function removeCont() {
+            if (cont.length>0) {
+                cont.pop();
+                contDisplay();
+            }
+        }
+
+        contDisplay();
+    </script>
+</body>
+</html>
